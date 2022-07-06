@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 
 import styles from '../styles/Chart.module.css'
 
-const chart = ({chart, updateQuantity, deleteProduct}) => {
+const Chart = ({chart, updateQuantity, deleteProduct}) => {
     const [total, setTotal] = useState(0)
 
     useEffect(()=> {
@@ -70,4 +70,4 @@ const chart = ({chart, updateQuantity, deleteProduct}) => {
     );
 };
 
-export default chart;
+export default Chart;
