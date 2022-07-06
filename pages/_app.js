@@ -18,9 +18,9 @@ function MyApp({ Component, pageProps }) {
   }, [chart])
 
   const addToChart = product => {
-    if(chart.some(item => item.id === product.id)){
+    if(chart.some(item => item._id === product._id)){
       const updatedChart = chart.map(item => {
-        if(item.id === product.id){
+        if(item._id === product._id){
           item.quantity += product.quantity
         }
         return item
@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }) {
 
   const updateQuantity = product => {
     const updatedChart = chart.map(item => {
-      if(item.id === product.id){
+      if(item._id === product._id){
         item.quantity = product.quantity
       }
       return item
@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps }) {
   }
 
   const deleteProduct = id => {
-    const updatedChart = chart.filter(item => item.id !== id)
+    const updatedChart = chart.filter(item => item._id !== id)
     setChart(updatedChart)
   }
 

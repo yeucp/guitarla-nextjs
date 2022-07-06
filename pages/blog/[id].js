@@ -32,7 +32,7 @@ export async function getStaticPaths() {
     const result = await response.json()
 
     const paths = result.map(item => ({
-        params: { id: item.id }
+        params: { id: item._id }
     }))
 
     return {

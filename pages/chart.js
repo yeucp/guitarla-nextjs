@@ -19,7 +19,7 @@ const chart = ({chart, updateQuantity, deleteProduct}) => {
                     <h2>Artículos</h2>
                     {chart.length === 0 ? '' : (
                         chart.map(product => (
-                            <div key={product.id} className={styles.product}>
+                            <div key={product._id} className={styles.product}>
                                 <div>
                                     <Image layout='responsive' width={250} height={480} src={product.image} alt={product.name}/>
                                 </div>
@@ -32,7 +32,7 @@ const chart = ({chart, updateQuantity, deleteProduct}) => {
                                             className={styles.select}
                                             onChange={e => updateQuantity({
                                                 quantity: e.target.value,
-                                                id: product.id
+                                                id: product._id
                                             })}
                                         >
                                             <option value='1'>1</option>
@@ -50,7 +50,7 @@ const chart = ({chart, updateQuantity, deleteProduct}) => {
                                 <button
                                     type='button'
                                     className={styles.delete}
-                                    onClick={e => deleteProduct(product.id)}
+                                    onClick={e => deleteProduct(product._id)}
                                 >X</button>
                             </div>
                         ))
